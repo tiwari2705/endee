@@ -20,7 +20,7 @@ services:
 # ----------------------------------------------------
     environment:
       NDD_NUM_THREADS: 0
-      NDD_AUTH_TOKEN: "" # Replace with your auth token
+      NDD_AUTH_TOKEN: "${NDD_AUTH_TOKEN}" # Set NDD_AUTH_TOKEN in your environment or .env file
     volumes:
       - endee-data:/data
     restart: unless-stopped

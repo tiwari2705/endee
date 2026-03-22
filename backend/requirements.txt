@@ -1,0 +1,6 @@
+flask
+flask-cors
+sentence-transformers
+numpy<2.0
+groq
+python-dotenv

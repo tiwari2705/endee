@@ -482,16 +482,7 @@ namespace ndd {
                          if (value >= right_b.base_value) {
                              right_b.add(value, id);
                          } else {
-                             // If value < right, goes to left. 
-                             // But wait, split point was determined by existing items.
-                             // If new value is >= base+split_delta, it goes right.
-                             // BUT we just cleared right from b.
-                             // Correct logic:
-                             b.add(value, id); // Add to left if it fits range (logic handles delta)
-                             // Oh wait, if we added to left, we might overflow again or break order? 
-                             // Simply: Check which bucket covers it.
-                             // Left covers [Base, RightBase-1]
-                             // Right covers [RightBase, ...]
+                             b.add(value, id);
                          }
 
                          // Save Left

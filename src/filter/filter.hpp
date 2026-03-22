@@ -252,6 +252,8 @@ public:
                     std::string str_val;
                     if(val.is_string()) {
                         str_val = val.get<std::string>();
+                        if(str_val.empty()) throw std::runtime_error("Category value cannot be empty");
+                        if(str_val.size() > 255) throw std::runtime_error("Category value too long");
                     } else if(val.is_boolean()) {
                         str_val = val.get<bool>() ? "1" : "0";
                     } else {
